@@ -1,42 +1,54 @@
-cabal-version: 1.12
+cabal-version:      2.4
+name:               learn-lh
+version:            0.1.0.0
+synopsis:
 
--- This file has been generated from package.yaml by hpack version 0.34.6.
---
--- see: https://github.com/sol/hpack
+-- A longer description of the package.
+-- description:
+homepage:
 
-name:           learn-lh
-version:        0.1.0.0
-description:    Please see the README on GitHub at <https://github.com/githubuser/learn-lh#readme>
-homepage:       https://github.com/githubuser/learn-lh#readme
-bug-reports:    https://github.com/githubuser/learn-lh/issues
-author:         Author name here
-maintainer:     example@example.com
-copyright:      2022 Author name here
-license:        BSD3
-license-file:   LICENSE
-build-type:     Simple
+-- A URL where users can report bugs.
+-- bug-reports:
+license:            NONE
+author:             Ashkan Nazary
+maintainer:         ashkan.kh.nazary@gmail.com
+
+-- A copyright notice.
+-- copyright:
+-- category:
 extra-source-files:
-    README.md
     CHANGELOG.md
-
-source-repository head
-  type: git
-  location: https://github.com/githubuser/learn-lh
+    README.md
 
 library
-  exposed-modules:
-      Tutorial_01_Main
-      Tutorial_04_Polymorphism
-  other-modules:
-      Paths_learn_lh
-  hs-source-dirs:
-      src
-  ghc-options: -Wall -Wcompat -Widentities -Wincomplete-record-updates -Wincomplete-uni-patterns -Wmissing-export-lists -Wmissing-home-modules -Wpartial-fields -Wredundant-constraints -fdefer-type-errors -fplugin=LiquidHaskell
-  build-depends:
-      liquid-base
-    , liquid-containers
-    , liquid-ghc-prim
-    , liquid-prelude
-    , liquid-vector
-    , liquidhaskell
-  default-language: Haskell2010
+    -- exposed-modules:
+    --     Tutorial_01_Main
+    --     Tutorial_04_Polymorphism
+    --     ReproduceFalse
+
+    -- Modules included in this library but not exported.
+    other-modules:
+        Tutorial_04_Polymorphism
+    other-extensions: NoImplicitPrelude ScopedTypeVariables
+    build-depends:    
+        base ^>=4.14.3.0,
+        liquidhaskell,
+        liquid-prelude,
+        liquid-ghc-prim,
+        liquid-containers,
+        liquid-vector
+    hs-source-dirs:   src
+    default-language: Haskell2010
+    ghc-options:
+        -- -Wall
+        -- -Wcompat
+        -- -Widentities
+        -- -Wincomplete-record-updates
+        -- -Wincomplete-uni-patterns
+        -- -Wmissing-export-lists
+        -- -Wmissing-home-modules
+        -- -Wpartial-fields
+        -- -Wredundant-constraints
+        -- -Wno-unused-imports
+        -- -Wno-unused-top-binds
+        -fplugin=LiquidHaskell    
